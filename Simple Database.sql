@@ -1,6 +1,3 @@
---Andres Fernanda Riady
---2301876386
-
 CREATE DATABASE MelodyStore
 USE MelodyStore
 CREATE TABLE Customer(
@@ -165,7 +162,7 @@ JOIN Employee E ON E.EmployeeID = HST.EmployeeID
 WHERE DATENAME(WEEKDAY,HeaderSalesTransactionDate) = 'Tuesday'
 
 /*
-3.	Display AlbumName, Album Price (obtained by adding ‘Rp’ in front of AlbumPrice), and Total Album Purchased (obtained from the total of quantity)
+3.	Display AlbumName, Album Price (obtained by adding â€˜Rpâ€™ in front of AlbumPrice), and Total Album Purchased (obtained from the total of quantity)
 for every Album which name is more than five characters length.
 (cast, sum, len, join, group by)
 */
@@ -179,11 +176,11 @@ GROUP BY AlbumName, AlbumPrice
 Total of Album Type (obtained from the total number of album), 
 Total of Quantity (obtained from the total quantity), 
 and HeaderSalesTransactionDate 
-for every Customer whose gender is ‘Male’. 
+for every Customer whose gender is â€˜Maleâ€™. 
 Then, combine with Customer Name (obtained by adding 'Mrs. ' in front of CustomerName), 
 Total of Album Type (obtained from the total number of album), Total of Quantity (obtained from total quantity), 
 and HeaderSalesTransactionDate 
-for every Customer whose gender is ‘Female’. 
+for every Customer whose gender is â€˜Femaleâ€™. 
 Sort the data based on Total of Quantity in ascending order.
 (sum, count, like, union, order by, group by)
 */
@@ -203,7 +200,7 @@ GROUP BY CustomerName, HeaderSalesTransactionDate
 ORDER BY [Total Of Quantity]
 
 /*
-5.	Display all the Customer data for every customer who has transaction on an even day of TransactionDate and purchase album which name is ‘CALM’.
+5.	Display all the Customer data for every customer who has transaction on an even day of TransactionDate and purchase album which name is â€˜CALMâ€™.
 (in, day, like)
 */
 SELECT C.CustomerID, CustomerName, CustomerGender, CustomerAddress, CustomerPhone, CustomerEmail
@@ -228,9 +225,9 @@ GROUP BY C.CustomerID, CustomerGender, CustomerEmail, CustomerPhone, HeaderSales
 WHERE C.CustomerID LIKE CX.CustomerID AND CX.QtyMeNeed > 1
 
 /*
-7.	Create a view named ‘UpdatedCustomerData’ to display CustomerName, CustomerGender, CustomerPhone,
-and Customer Email (obtained by replacing ‘.co.id’ with .com on CustomerEmail) 
-for every customer whose email contains  ‘yahoo’ domain.
+7.	Create a view named â€˜UpdatedCustomerDataâ€™ to display CustomerName, CustomerGender, CustomerPhone,
+and Customer Email (obtained by replacing â€˜.co.idâ€™ with .com on CustomerEmail) 
+for every customer whose email contains  â€˜yahooâ€™ domain.
 (create view, replace, like)
 */
 GO
@@ -243,9 +240,9 @@ GO
 SELECT * FROM UpdatedCustomerData
 
 /*
-8.	Create a view named ‘TransactionDataOfPopAlbum’ to display HeaderSalesTransactionID, 
+8.	Create a view named â€˜TransactionDataOfPopAlbumâ€™ to display HeaderSalesTransactionID, 
 Day of Transaction (obtained from day of HeaderSalesTransactionDate), HeaderSalesTransactionDate, 
-and Total of Quantity (obtained from the total of Quantity) for every transaction which sold album that genre name is ‘Pop’.
+and Total of Quantity (obtained from the total of Quantity) for every transaction which sold album that genre name is â€˜Popâ€™.
 (create view, datename, weekday, sum, group by)
 */
 
@@ -260,8 +257,8 @@ GROUP BY hst.HeaderSalesTransactionID, HeaderSalesTransactionDate
 SELECT * FROM TransactionDataOfPopAlbum
 
 /*
-9.	Add a column named ‘CustomerInstagram’ on 
-Customer table with varchar (20) data type and add a constraint named ‘CheckInstagram’ to check the CustomerInstagram must starts with ‘@’.
+9.	Add a column named â€˜CustomerInstagramâ€™ on 
+Customer table with varchar (20) data type and add a constraint named â€˜CheckInstagramâ€™ to check the CustomerInstagram must starts with â€˜@â€™.
 (alter table, add, add constraint)
 */
 BEGIN TRAN
